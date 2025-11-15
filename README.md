@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Here’s a clean, beginner-friendly **`README.md`** you can include in your backend repo — it assumes the user has *nothing installed yet* and guides them step-by-step to run your project successfully.
 
 ---
@@ -233,3 +234,7 @@ MIT License © 2025 — BK Sharing Team
 
 Would you like me to include a section showing **how to modify and reload the sample SQL seed file** (so new developers can change initial data like users or categories)?
 ```
+=======
+# Kindergarten-App-BE
+The backend for the kindergarten App
+>>>>>>> 30e6a15f8720a54da97218b7208e71154d1e49df
