@@ -1,4 +1,3 @@
-````markdown
 # 📘 BK Kindergarten Backend
 
 A Spring Boot backend for the **BK Kindergarten** project — a platform for students to share and access academic materials such as lecture notes, assignments, and projects.
