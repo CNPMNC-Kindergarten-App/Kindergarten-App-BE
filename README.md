@@ -123,6 +123,15 @@ docker rm <container_id>
 
 # Remove Docker image
 docker rmi bk-kindergarten-app
+
+# Check the database, using git bash
+docker run -it --rm mysql:8.0 mysql \
+  --user {replace this with the user in secret} \
+  --password={replace this with the password in secret} \
+  --host mysql-3e8ba3d9-cnpmnc-3065.k.aivencloud.com \
+  --port 14132 \
+  devdb \
+  -e "SHOW TABLES;"
 ```
 
 ---
@@ -226,3 +235,5 @@ MIT License © 2025 — BK Kindergarten Team
 
 Would you like me to include a section showing **how to modify and reload the sample SQL seed file** (so new developers can change initial data like users or categories)?
 ```
+
+

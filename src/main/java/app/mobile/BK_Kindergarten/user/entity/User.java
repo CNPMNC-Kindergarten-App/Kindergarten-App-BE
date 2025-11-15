@@ -6,44 +6,37 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "User")
 @Data
 public class User {
     @Id
+    @Column(name = "uuid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Integer userId;
 
-    @Column(nullable = false, unique = true, length = 100)
-    private String username;
+    @Column(nullable = false, length = 100)
+    private String name;
 
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(nullable = false, unique = true, length = 255)
     private String email;
 
     @Column(nullable = false, length = 255)
     private String password;
 
-    @Column(nullable = false, length = 255)
-    private String fullName;
-
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private Role role;
 
-    @Column(length = 500)
-    private String profilePicture;
+    @Column(nullable = false, length = 25)
+    private String phone;
 
-    @Column(nullable = false)
-    private Boolean isActive = true;
-
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
+    @Column(nullable = false, length = 255)
+    private String address;
 
     public enum Role {
-        ADMIN, STUDENT
+        GV, PH
     }
 }
