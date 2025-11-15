@@ -87,7 +87,7 @@ If you already have MySQL running locally:
 3. Or use the generated JAR file:
 
    ```bash
-   java -jar target/bk-Kindergarten-app.jar
+   java -jar target/bk-kindergarten-app.jar
    ```
 
 ---
@@ -98,10 +98,10 @@ If you already have MySQL running locally:
 
 ```bash
 # Build Docker image
-docker build -t bk-Kindergarten-app .
+docker build -t bk-kindergarten-app .
 
 # Run app container
-docker run -p 8080:8080 bk-Kindergarten-app
+docker run -p 8080:8080 bk-kindergarten-app
 
 # Stop and remove containers
 docker-compose down
@@ -125,7 +125,7 @@ docker logs <container_id>
 docker rm <container_id>
 
 # Remove Docker image
-docker rmi bk-Kindergarten-app
+docker rmi bk-kindergarten-app
 ```
 
 ---
@@ -148,7 +148,7 @@ docker rmi bk-Kindergarten-app
 
       ```bash
       MYSQL_ROOT_PASSWORD=yourpassword
-      MYSQL_DATABASE=bk_Kindergarten
+      MYSQL_DATABASE=bk_kindergarten
       MYSQL_USER=bk_user
       MYSQL_PASSWORD=secret
       ```
@@ -188,7 +188,7 @@ docker exec -it <mysql_container_name> mysql -u root -p
 Then check tables:
 
 ```sql
-USE bk_Kindergarten;
+USE bk_kindergarten;
 SHOW TABLES;
 SELECT * FROM user;
 ```
