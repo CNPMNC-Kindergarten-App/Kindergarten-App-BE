@@ -39,7 +39,7 @@ git clone https://github.com/CNPMNC-Kindergarten-App/Kindergarten-App-BE.git
 ### 2️⃣ Build the Project (Maven)
 
 ```bash
-mvn clean package
+mvn clean package -DskipTests
 ```
 
 This will:
@@ -75,7 +75,7 @@ If you already have MySQL running locally:
 1. Update your database credentials in
    **`src/main/resources/application.properties`**
 
-2. Then run:
+2. Open your docker or docker desktop, then run:
 
    ```bash
    mvn spring-boot:run
