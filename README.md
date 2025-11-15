@@ -126,8 +126,8 @@ docker rmi bk-kindergarten-app
 
 # Check the database, using git bash
 docker run -it --rm mysql:8.0 mysql \
-  --user avnadmin \
-  --password=AVNS_Yd4ELmNg-nPb33HTgDl \
+  --user {replace this with the user in secret} \
+  --password={replace this with the password in secret} \
   --host mysql-3e8ba3d9-cnpmnc-3065.k.aivencloud.com \
   --port 14132 \
   devdb \

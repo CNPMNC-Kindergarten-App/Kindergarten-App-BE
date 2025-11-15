@@ -4,17 +4,12 @@ services:
     build: .
     ports:
       - "8080:8080"
+    env_file:
+      - .env
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-3e8ba3d9-cnpmnc-3065.k.aivencloud.com:14132/devdb?useSSL=true&allowPublicKeyRetrieval=true
-      - SPRING_DATASOURCE_USERNAME=avnadmin
-      - SPRING_DATASOURCE_PASSWORD=AVNS_Yd4ELmNg-nPb33HTgDl
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=validate
       - SPRING_SQL_INIT_MODE=never
-    # No depends_on needed since we're using external DB
-#    volumes:
-#      # BIND MOUNT: Map your local project folder to the container's working directory.
-#      # This makes the container use your local files directly.
-#      - .:/app
     networks:
       - app-network
 
