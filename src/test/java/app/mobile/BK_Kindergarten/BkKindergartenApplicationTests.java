@@ -5,11 +5,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("test")
+@ActiveProfiles("test")  // Use test profile
 class BkKindergartenApplicationTests {
 
 	@Test
 	void contextLoads() {
-		// This test will verify that the application context loads successfully
+		// This test will use H2 database
 	}
 }

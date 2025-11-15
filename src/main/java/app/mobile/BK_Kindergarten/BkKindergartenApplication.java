@@ -4,10 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BkSharingApplication {
-
+public class BkKindergartenApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(BkSharingApplication.class, args);
+		SpringApplication.run(BkKindergartenApplication.class, args);
 	}
-
 }
