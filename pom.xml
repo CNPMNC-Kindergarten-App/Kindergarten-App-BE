@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>app.mobile</groupId>
-	<artifactId>BK_sharing</artifactId>
+	<artifactId>BK_Kindergarten</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BK_sharing</name>
+	<name>BK_Kindergarten</name>
 	<description>Mobile project for Spring Boot</description>
 	<url/>
 	<licenses>

@@ -8,6 +8,6 @@ RUN mvn clean package -DskipTests
 # Runtime stage - FIXED: Use eclipse-temurin instead of openjdk
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
-COPY --from=builder /app/target/BK_sharing-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=builder /app/target/BK_kindergarten-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

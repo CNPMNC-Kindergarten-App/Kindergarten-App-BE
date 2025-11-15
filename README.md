@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-Here’s a clean, beginner-friendly **`README.md`** you can include in your backend repo — it assumes the user has *nothing installed yet* and guides them step-by-step to run your project successfully.
-
 ---
 
 ````markdown
-# 📘 BK Sharing Backend
+# 📘 BK Kindergarten Backend
 
-A Spring Boot backend for the **BK Sharing** project — a platform for students to share and access academic materials such as lecture notes, assignments, and projects.
+A Spring Boot backend for the **BK Kindergarten** project — a platform for students to share and access academic materials such as lecture notes, assignments, and projects.
 
 ---
 
@@ -37,9 +34,7 @@ git --version
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/L02TuCa/MobileApp-L02-251.git
-git checkout backend/code
-cd MobileApp-L02-251/BK_sharing_backend
+git clone https://github.com/CNPMNC-Kindergarten-App/Kindergarten-App-BE.git
 ```
 
 ---
@@ -92,7 +87,7 @@ If you already have MySQL running locally:
 3. Or use the generated JAR file:
 
    ```bash
-   java -jar target/bk-sharing-app.jar
+   java -jar target/bk-kindergarten-app.jar
    ```
 
 ---
@@ -103,10 +98,10 @@ If you already have MySQL running locally:
 
 ```bash
 # Build Docker image
-docker build -t bk-sharing-app .
+docker build -t bk-kindergarten-app .
 
 # Run app container
-docker run -p 8080:8080 bk-sharing-app
+docker run -p 8080:8080 bk-kindergarten-app
 
 # Stop and remove containers
 docker-compose down
@@ -130,7 +125,7 @@ docker logs <container_id>
 docker rm <container_id>
 
 # Remove Docker image
-docker rmi bk-sharing-app
+docker rmi bk-kindergarten-app
 ```
 
 ---
@@ -153,7 +148,7 @@ docker rmi bk-sharing-app
 
       ```bash
       MYSQL_ROOT_PASSWORD=yourpassword
-      MYSQL_DATABASE=bk_sharing
+      MYSQL_DATABASE=bk_kindergarten
       MYSQL_USER=bk_user
       MYSQL_PASSWORD=secret
       ```
@@ -193,7 +188,7 @@ docker exec -it <mysql_container_name> mysql -u root -p
 Then check tables:
 
 ```sql
-USE bk_sharing;
+USE bk_kindergarten;
 SHOW TABLES;
 SELECT * FROM user;
 ```
@@ -226,7 +221,7 @@ SELECT * FROM user;
 
 ## 🧾 License
 
-MIT License © 2025 — BK Sharing Team
+MIT License © 2025 — BK Kindergarten Team
 
 ```
 
@@ -234,7 +229,3 @@ MIT License © 2025 — BK Sharing Team
 
 Would you like me to include a section showing **how to modify and reload the sample SQL seed file** (so new developers can change initial data like users or categories)?
 ```
-=======
-# Kindergarten-App-BE
-The backend for the kindergarten App
->>>>>>> 30e6a15f8720a54da97218b7208e71154d1e49df
