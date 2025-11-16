@@ -17,30 +17,37 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/",
-                                "/home",
-                                "/css/**",
-                                "/js/**",
-                                "/images/**"
-                        ).permitAll()
-                        .anyRequest().authenticated()
-                )
-//                .formLogin(form -> form
-//                        .loginPage("/login")
-//                        .permitAll()
-//                )
-//                .logout(logout -> logout
-//                        .permitAll()
-//                )
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
                 .csrf(AbstractHttpConfigurer::disable);
-        ;
 
         return http.build();
     }
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        http
+//                .authorizeHttpRequests(auth -> auth
+//                        .requestMatchers(
+//                                "/",
+//                                "/home",
+//                                "/css/**",
+//                                "/js/**",
+//                                "/images/**"
+//                        ).permitAll()
+//                        .anyRequest().authenticated()
+//                )
+////                .formLogin(form -> form
+////                        .loginPage("/login")
+////                        .permitAll()
+////                )
+////                .logout(logout -> logout
+////                        .permitAll()
+////                )
+//                .csrf(AbstractHttpConfigurer::disable);
+//        ;
+//
+//        return http.build();
+//    }
 }
