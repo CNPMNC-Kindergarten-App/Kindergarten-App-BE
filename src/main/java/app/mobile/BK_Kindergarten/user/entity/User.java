@@ -2,11 +2,6 @@ package app.mobile.BK_Kindergarten.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Table(name = "User")
@@ -38,5 +33,21 @@ public class User {
 
     public enum Role {
         GV, PH
+    }
+
+    public Integer getUuid() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Role getRole() {
+        return role;
     }
 }

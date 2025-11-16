@@ -16,12 +16,12 @@ public class ChildrenController {
     }
 
     @GetMapping("/findAll")
-    public List<Childeren> getAllChildren() {
+    public List<Children> getAllChildren() {
         return  this.childrenService.getAllChildren();
     }
 
     @GetMapping("/{id}")
-    public Childeren getChildren(@PathVariable Long  id) {
+    public Children getChildren(@PathVariable Long  id) {
         return this.childrenService.getChildrenById(id);
     }
 }

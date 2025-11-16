@@ -8,11 +8,11 @@ import java.sql.Date;
 @Entity
 @Table(name =  "Children")
 @Data
-public class Childeren {
+public class Children {
 
     @Id
     @Column(name = "child_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name")
