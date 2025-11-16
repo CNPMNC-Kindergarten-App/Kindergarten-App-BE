@@ -13,7 +13,7 @@ public class ChildrenService {
         this.childrenRepository = childrenRepository;
     }
 
-    public List<Childeren> getAllChildren() {
+    public List<Children> getAllChildren() {
         try {
             return this.childrenRepository.findAll();
 
@@ -22,7 +22,7 @@ public class ChildrenService {
         }
     }
 
-    public Childeren getChildrenById (Long id) {
+    public Children getChildrenById (Long id) {
         try {
             return this.childrenRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("Children not found with id " + id));
