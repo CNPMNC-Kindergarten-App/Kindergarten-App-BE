@@ -42,7 +42,7 @@ public class ChildrenService {
         }
     }
 
-    public Children getChildrenById(Long id) {
+    public Children getChildrenById(Integer id) {
         try {
             return this.childrenRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("Children not found with id " + id));

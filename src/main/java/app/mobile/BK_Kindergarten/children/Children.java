@@ -14,9 +14,9 @@ public class Children {
     @Id
     @Column(name = "child_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private  String name;
 
     @Column(name = "sex")
@@ -32,7 +32,7 @@ public class Children {
     private String character;
 
 //    @OneToOne()
-//    @JoinColumn(name = "parent_id")
+//    @JoinColumn(name = "parent_id", nullable = true)
 //    private Parent parentId;
 
 }

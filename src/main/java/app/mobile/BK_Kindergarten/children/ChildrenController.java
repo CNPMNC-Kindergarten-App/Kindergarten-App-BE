@@ -44,7 +44,7 @@ public class ChildrenController {
      * GET /children/{id}
      */
     @GetMapping("/{id}")
-    public Children getChildren(@PathVariable Long id) {
+    public Children getChildren(@PathVariable Integer id) {
         return this.childrenService.getChildrenById(id);
     }
 }
