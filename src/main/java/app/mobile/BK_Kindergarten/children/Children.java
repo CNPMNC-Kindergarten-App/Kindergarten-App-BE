@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
-@Table(name =  "children")
+@Table(name =  "Children")
 @Data
 public class Children {
 
