@@ -6,6 +6,7 @@ import app.mobile.BK_Kindergarten.children.ChildrenRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class AttendService {
@@ -37,5 +38,18 @@ public class AttendService {
 
         // 4. Lưu vào DB
         return attendRepository.save(attend);
+    }
+
+    // 1. Lấy danh sách điểm danh của lớp trong ngày
+    public List<Attend> getClassAttendance(Integer classId, LocalDate date) {
+        if (date == null) {
+            date = LocalDate.now(); // Nếu không gửi ngày, mặc định lấy hôm nay
+        }
+        return attendRepository.findByClassIdAndAttendDate(classId, date);
+    }
+
+    // 2. Lấy lịch sử đi học của một học sinh
+    public List<Attend> getChildHistory(Integer childId) {
+        return attendRepository.findByChildId(childId);
     }
 }

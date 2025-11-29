@@ -1,6 +1,7 @@
 package app.mobile.BK_Kindergarten.attend;
 
 import app.mobile.BK_Kindergarten.children.Children;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDate;
@@ -22,6 +23,7 @@ public class Attend {
     @ManyToOne(fetch = FetchType.LAZY)
     // QUAN TRỌNG: columnDefinition="INT" để tránh lỗi
     @JoinColumn(name = "child_id", nullable = false, columnDefinition = "INT")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Children child;
 
     // BẮT BUỘC PHẢI CÓ: Ngày điểm danh (Để xem lại lịch sử)
