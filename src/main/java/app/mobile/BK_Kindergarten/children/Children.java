@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Date;
+import java.sql.Time;
 
 @Entity
 @Table(name =  "Children")
@@ -12,7 +13,7 @@ public class Children {
 
     @Id
     @Column(name = "child_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name")
@@ -24,11 +25,15 @@ public class Children {
     @Column(name = "dob")
     private Date dob;
 
+    @Column(name = "bedtime")
+    private Time bedtime;
+
     @Column(name = "habit")
     private String habit;
 
     @Column(name = "character")
     private String character;
+
 
 //    @OneToOne()
 //    @JoinColumn(name = "parent_id")
