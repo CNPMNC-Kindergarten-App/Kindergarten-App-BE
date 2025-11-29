@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ChildrenRepository extends JpaRepository<Childeren, Long> {
-    List<Childeren> findAllByname(String name);
+public interface ChildrenRepository extends JpaRepository<Children, Long> {
+    List<Children> findAllByname(String name);
 }
