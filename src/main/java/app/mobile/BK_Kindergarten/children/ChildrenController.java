@@ -1,9 +1,6 @@
 package app.mobile.BK_Kindergarten.children;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,10 @@ public class ChildrenController {
     @GetMapping("/{id}")
     public Children getChildren(@PathVariable Long  id) {
         return this.childrenService.getChildrenById(id);
+    }
+
+    @GetMapping()
+    public List<Children> getChildrenByParentId(@RequestParam(name = "parent_id") int  id) {
+        return this.childrenService.getChildrenByParentId(id);
     }
 }

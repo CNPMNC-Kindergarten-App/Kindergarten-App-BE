@@ -31,4 +31,13 @@ public class ChildrenService {
             throw new RuntimeException(e);
         }
     }
+
+    public List<Children> getChildrenByParentId (int id) {
+        try {
+            return this.childrenRepository.findAllByparentId(id);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
