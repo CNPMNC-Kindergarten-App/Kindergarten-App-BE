@@ -28,6 +28,7 @@ public class AttendService {
         Attend attend = new Attend();
         attend.setChild(child);
         attend.setClassId(request.getClassId());
+        attend.setStatus(request.getStatus());
 
         // 3. Xử lý ngày: Nếu request không gửi ngày, lấy ngày hôm nay
         if (request.getDate() != null) {

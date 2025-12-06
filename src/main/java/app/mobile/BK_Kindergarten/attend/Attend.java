@@ -30,4 +30,8 @@ public class Attend {
     // Nếu bạn không muốn client gửi lên, có thể gán mặc định là ngày hiện tại
     @Column(name = "attend_date")
     private LocalDate attendDate;
+
+
+    @Column(name = "status", length = 50)
+    private String status;
 }
