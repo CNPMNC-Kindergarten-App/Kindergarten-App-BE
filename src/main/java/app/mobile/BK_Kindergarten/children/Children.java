@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.sql.Time;
 
 @Entity
@@ -15,7 +14,7 @@ public class Children {
     @Id
     @Column(name = "child_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
 
     @Column(name = "name")
     private  String name;
@@ -24,7 +23,7 @@ public class Children {
     private  String sex;
 
     @Column(name = "dob")
-    private LocalDate dob;
+    private Date dob;
 
     @Column(name = "bedtime")
     private Time bedtime;
@@ -32,12 +31,12 @@ public class Children {
     @Column(name = "habit")
     private String habit;
 
-    @Column(name = "`character`")
+    @Column(name = "character")
     private String character;
 
 
 //    @OneToOne()
-//    @JoinColumn(name = "parent_id", nullable = true)
+//    @JoinColumn(name = "parent_id")
 //    private Parent parentId;
 
 }
