@@ -43,7 +43,7 @@ public class AttendController {
     // URL: GET http://localhost:8080/api/attend/child/1
     // ==========================================
     @GetMapping("/child/{childId}")
-    public ResponseEntity<List<Attend>> viewChildHistory(@PathVariable Integer childId) {
+    public ResponseEntity<List<Attend>> viewChildHistory(@PathVariable Long childId) {
 
         List<Attend> list = attendService.getChildHistory(childId);
         return ResponseEntity.ok(list);

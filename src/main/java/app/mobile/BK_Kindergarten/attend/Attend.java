@@ -21,8 +21,8 @@ public class Attend {
 
     // QUAN HỆ: Nối với bảng Children
     @ManyToOne(fetch = FetchType.LAZY)
-    // QUAN TRỌNG: columnDefinition="INT" để tránh lỗi
-    @JoinColumn(name = "child_id", nullable = false, columnDefinition = "INT")
+    // QUAN TRỌNG: columnDefinition="BIGINT" để tránh lỗi
+    @JoinColumn(name = "child_id", nullable = false, columnDefinition = "BIGINT")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Children child;
 

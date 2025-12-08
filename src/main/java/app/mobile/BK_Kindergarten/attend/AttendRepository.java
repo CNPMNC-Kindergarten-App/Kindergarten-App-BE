@@ -9,11 +9,11 @@ import java.util.Optional;
 @Repository
 public interface AttendRepository extends JpaRepository<Attend, Integer> {
     // Tìm điểm danh của 1 học sinh
-    List<Attend> findByChildId(Integer childId);
+    List<Attend> findByChildId(Long childId);
 
     // Tìm điểm danh của 1 lớp trong 1 ngày cụ thể (dùng cho tính năng "Xem điểm danh")
     List<Attend> findByClassIdAndAttendDate(Integer classId, LocalDate attendDate);
 
     // Kiểm tra xem hôm nay bé này đã được điểm danh chưa (tránh trùng lặp)
-    Optional<Attend> findByChildIdAndAttendDate(Integer childId, LocalDate attendDate);
+    Optional<Attend> findByChildIdAndAttendDate(Long childId, LocalDate attendDate);
 }

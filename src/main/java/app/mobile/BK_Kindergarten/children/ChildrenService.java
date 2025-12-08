@@ -42,10 +42,18 @@ public class ChildrenService {
         }
     }
 
-    public Children getChildrenById(Integer id) {
+    public Children getChildrenById(Long id) {
         try {
             return this.childrenRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("Children not found with id " + id));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Children> getChildrenByParentId (Long id) {
+        try {
+            return this.childrenRepository.findAllByparentId(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

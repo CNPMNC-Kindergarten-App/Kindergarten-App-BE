@@ -50,7 +50,7 @@ public class AttendService {
     }
 
     // 2. Lấy lịch sử đi học của một học sinh
-    public List<Attend> getChildHistory(Integer childId) {
+    public List<Attend> getChildHistory(Long childId) {
         return attendRepository.findByChildId(childId);
     }
 }

@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ChildrenRepository extends JpaRepository<Children, Integer> {
+public interface ChildrenRepository extends JpaRepository<Children, Long> {
     List<Children> findAllByName(String name);
+
+    @Query("SELECT c FROM Children c WHERE c.parent_id = :parent_id")
+    List<Children> findAllByparentId(Long parent_id);
 }
