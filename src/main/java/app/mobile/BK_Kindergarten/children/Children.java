@@ -35,9 +35,7 @@ public class Children {
     @Column(name = "`character`")
     private String character;
 
-
-//    @OneToOne()
-//    @JoinColumn(name = "parent_id", nullable = true)
-//    private Parent parentId;
+    @JoinColumn(name = "parent_id")
+    private int parent_id;
 
 }
