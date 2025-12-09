@@ -21,31 +21,26 @@ public class FeedController {
     }
 
     @PostMapping("/create")
-    public Feed createFeed(@RequestParam("title") String title,
-                           @RequestParam("content") String content,
-                           @RequestParam("category") Feed.Category category,
-                           @RequestParam("author") String author,
-                           @RequestParam("textHtml") String textHtml,
-                           @RequestParam(value = "images", required = false )MultipartFile[] images ) throws IOException {
+    public Feed createFeed(@RequestBody createFeedDto createdto) {
 
-        List<String> imageUrls = new ArrayList<>();
-        String uploadDir = "./uploads/images/";
-        if (images != null && images.length > 0) {
+//        List<String> imageUrls = new ArrayList<>();
+//        String uploadDir = "./uploads/images/";
+//        if (images != null && images.length > 0) {
+//
+//            for (MultipartFile file : images) {
+//                if (file != null && !file.isEmpty()) {
+//                    String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+//                    Path filePath = Paths.get(uploadDir + fileName);
+//                    Files.createDirectories(filePath.getParent());
+//                    Files.write(filePath, file.getBytes());
+//                    imageUrls.add(fileName);
+//                }
+//            }
+//        }
 
-            for (MultipartFile file : images) {
-                if (file != null && !file.isEmpty()) {
-                    String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
-                    Path filePath = Paths.get(uploadDir + fileName);
-                    Files.createDirectories(filePath.getParent());
-                    Files.write(filePath, file.getBytes());
-                    imageUrls.add(fileName);
-                }
-            }
-        }
+//        createFeedDto creatDto = new createFeedDto(title, content, imageUrls, category, author, textHtml, exerpt, date, featured);
 
-        createFeedDto creatDto = new createFeedDto(title, content, imageUrls, category, author, textHtml);
-
-        return this.feedService.craetFeed(creatDto);
+        return this.feedService.craetFeed(createdto);
     }
 
 

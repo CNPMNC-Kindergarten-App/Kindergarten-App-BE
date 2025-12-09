@@ -11,9 +11,11 @@ import java.util.List;
 public class createFeedDto {
     private String title;
     private String content;
-    private List<String> image_urls;
-    private Feed.Category category_feed;
+    private String image;
+    private Feed.Category category;
     private String author;
-    private  String textHtml;
-
+    private  String html;
+    private  String excerpt;
+    private  String date;
+    private  String featured;
 }

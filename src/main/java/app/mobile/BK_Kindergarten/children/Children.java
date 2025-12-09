@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.sql.Time;
+import java.time.LocalDate;
 
 @Entity
 @Table(name =  "Children")
@@ -32,10 +32,9 @@ public class Children {
     @Column(name = "habit")
     private String habit;
 
-    @Column(name = "`character`")
+    @Column(name = "character")
     private String character;
 
     @JoinColumn(name = "parent_id")
-    private Long parent_id;
-
+    private Long  parent_id;
 }
