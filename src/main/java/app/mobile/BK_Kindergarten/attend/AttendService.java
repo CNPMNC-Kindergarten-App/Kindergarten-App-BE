@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AttendService {
@@ -24,17 +25,24 @@ public class AttendService {
         Children child = childrenRepository.findById(request.getChildId())
                 .orElseThrow(() -> new RuntimeException("Không tìm thấy học sinh có ID: " + request.getChildId()));
 
-        // 2. Tạo bản ghi điểm danh mới
-        Attend attend = new Attend();
-        attend.setChild(child);
-        attend.setClassId(request.getClassId());
-        attend.setStatus(request.getStatus());
+        // 2. Xử lý ngày: Nếu request không gửi ngày, lấy ngày hôm nay
+        LocalDate attendDate = request.getDate() != null ? request.getDate() : LocalDate.now();
 
-        // 3. Xử lý ngày: Nếu request không gửi ngày, lấy ngày hôm nay
-        if (request.getDate() != null) {
-            attend.setAttendDate(request.getDate());
+        // 3. Kiểm tra xem đã có bản ghi điểm danh cho học sinh này vào ngày này chưa
+        Optional<Attend> existingAttend = attendRepository.findByChildIdAndAttendDate(request.getChildId(), attendDate);
+
+        Attend attend;
+        if (existingAttend.isPresent()) {
+            // Nếu đã tồn tại, cập nhật bản ghi cũ
+            attend = existingAttend.get();
+            attend.setStatus(request.getStatus());
         } else {
-            attend.setAttendDate(LocalDate.now());
+            // Nếu chưa tồn tại, tạo bản ghi mới
+            attend = new Attend();
+            attend.setChild(child);
+            attend.setClassId(request.getClassId());
+            attend.setStatus(request.getStatus());
+            attend.setAttendDate(attendDate);
         }
 
         // 4. Lưu vào DB
