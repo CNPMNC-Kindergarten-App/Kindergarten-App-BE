@@ -17,10 +17,13 @@ public class FeedService {
         Feed feed = new Feed();
         feed.setTitle(createFeedDto.getTitle());
         feed.setContent(createFeedDto.getContent());
-        feed.setCategory(createFeedDto.getCategory_feed());
-        feed.setImageUrl(createFeedDto.getImage_urls());
+        feed.setCategory(createFeedDto.getCategory());
+        feed.setImage(createFeedDto.getImage());
         feed.setAuthor(createFeedDto.getAuthor());
-        feed.setTextHtml(createFeedDto.getTextHtml());
+        feed.setHtml(createFeedDto.getHtml());
+        feed.setExcerpt(createFeedDto.getExcerpt());
+        feed.setDate(createFeedDto.getDate());
+        feed.setFeatured(createFeedDto.getFeatured());
 
         return this.feedRepository.save(feed);
     }

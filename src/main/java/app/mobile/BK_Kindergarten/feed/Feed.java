@@ -20,8 +20,8 @@ public class Feed {
     private String title;
 
     @Type(JsonType.class)
-    @Column(name = "image_url", columnDefinition = "json")
-    private List<String> imageUrl;
+    @Column(name = "image_url")
+    private String image;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "category")
@@ -29,7 +29,10 @@ public class Feed {
 
     public enum Category {
         ANNOUNCEMENT,
-        EVENT
+        EVENT,
+        ACTIVITY,
+        ACADEMIC,
+        ENROLLMENT,
     }
 
     @Column(name = "content")
@@ -39,8 +42,16 @@ public class Feed {
     private String author;
 
     @Column(name = "textHtml")
-    private String textHtml;
+    private String html;
 
+    @Column(name = "excerpt")
+    private  String excerpt;
+
+    @Column(name = "dated")
+    private  String date;
+
+    @Column(name = "featured")
+    private String featured;
 //    @Column(name = "published_at", updatable = false)
 //    private Timestamp publishedAt;
 //
