@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.*; // Sửa: import *
 import java.util.List;
 
 @RestController
-@RequestMapping("/children")
-@CrossOrigin(origins = "*") 
+@RequestMapping("/api/children")
 public class ChildrenController {
     private final ChildrenService childrenService;
 

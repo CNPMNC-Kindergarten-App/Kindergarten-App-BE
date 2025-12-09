@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/absence")
+@RequestMapping("/api/absence")
 public class AbsenceController {
     private final AbsenceService absenceService;
     public AbsenceController(AbsenceService absenceService) {
