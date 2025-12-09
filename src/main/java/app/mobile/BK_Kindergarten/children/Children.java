@@ -35,8 +35,5 @@ public class Children {
     private String character;
 
     @JoinColumn(name = "parent_id")
-    private int parent_id;
-
-
-
+    private Long  parent_id;
 }
