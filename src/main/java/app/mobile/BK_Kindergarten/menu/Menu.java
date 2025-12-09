@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "Menu")
@@ -23,6 +24,9 @@ public class Menu {
     @Column(name = "meal")
     private String meal;
 
+    @Column(name = "menu_day")
+    private String menu_day;
+
     @ManyToMany
     @JoinTable(
             name = "Menu_Dish",
@@ -31,4 +35,10 @@ public class Menu {
     )
     @JsonManagedReference
     private Set<Dish> dishes = new HashSet<>();
+
+    @JsonProperty("menu_day")
+    public String getMenuDay() {
+        return menu_day;
+    }
+
 }

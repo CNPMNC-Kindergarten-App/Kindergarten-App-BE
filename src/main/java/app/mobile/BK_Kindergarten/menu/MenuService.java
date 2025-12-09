@@ -4,10 +4,13 @@ import app.mobile.BK_Kindergarten.dish.Dish;
 import app.mobile.BK_Kindergarten.dish.DishRepository;
 import app.mobile.BK_Kindergarten.menu.dto.AddDishToMenuRequest;
 import app.mobile.BK_Kindergarten.menu.dto.CreateMenuRequest;
+import app.mobile.BK_Kindergarten.menu.dto.MenuGroupResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -16,8 +19,18 @@ public class MenuService {
     private final MenuRepository menuRepository;
     private final DishRepository dishRepository;
 
-    public List<Menu> getAll() {
-        return menuRepository.findAll();
+    public List<MenuGroupResponse> getAll() {
+        List<Menu> menus = menuRepository.findAll();
+
+        // group by menu_day
+        Map<String, List<Menu>> grouped = menus.stream()
+                .collect(Collectors.groupingBy(Menu::getMenuDay));
+
+        // convert to list of MenuGroupResponse
+        return grouped.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey()) // sort theo menu_day
+                .map(entry -> new MenuGroupResponse(entry.getKey(), entry.getValue()))
+                .collect(Collectors.toList());
     }
 
     public Menu getMenu(int id) {

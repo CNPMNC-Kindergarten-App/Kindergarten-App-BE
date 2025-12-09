@@ -2,10 +2,12 @@ package app.mobile.BK_Kindergarten.menu;
 
 import app.mobile.BK_Kindergarten.menu.dto.AddDishToMenuRequest;
 import app.mobile.BK_Kindergarten.menu.dto.CreateMenuRequest;
+import app.mobile.BK_Kindergarten.menu.dto.MenuGroupResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/menus")
@@ -20,7 +22,10 @@ public class MenuController {
     }
 
     @GetMapping
-    public List<Menu> getAllMenus() {
+    // public Map<String, List<Menu>> getAllMenus() {
+    //     return menuService.getAll();
+    // }
+    public List<MenuGroupResponse> getAllMenus() {
         return menuService.getAll();
     }
 
