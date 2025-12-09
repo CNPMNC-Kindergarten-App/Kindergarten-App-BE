@@ -14,7 +14,7 @@ public class Children {
     @Id
     @Column(name = "child_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "name")
     private  String name;

@@ -11,8 +11,8 @@ import java.util.List;
 
 @Repository
 public interface ChildrenRepository extends JpaRepository<Children, Long> {
-    List<Children> findAllByname(String name);
+    List<Children> findAllByName(String name);
 
     @Query("SELECT c FROM Children c WHERE c.parent_id = :parent_id")
-    List<Children> findAllByparentId(int parent_id);
+    List<Children> findAllByparentId(Long parent_id);
 }

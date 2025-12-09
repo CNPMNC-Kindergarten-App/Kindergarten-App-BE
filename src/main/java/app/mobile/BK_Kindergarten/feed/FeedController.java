@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/feed")
+@RequestMapping("/api/feed")
 public class FeedController {
     private FeedService feedService;
     public FeedController(FeedService feedService) {
