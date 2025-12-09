@@ -15,7 +15,7 @@ public class Children {
     @Id
     @Column(name = "child_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     private  String name;
@@ -36,5 +36,5 @@ public class Children {
     private String character;
 
     @JoinColumn(name = "parent_id")
-    private int  parent_id;
+    private Integer parent_id;
 }

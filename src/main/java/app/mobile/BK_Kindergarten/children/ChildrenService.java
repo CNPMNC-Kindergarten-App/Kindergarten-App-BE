@@ -51,7 +51,7 @@ public class ChildrenService {
         }
     }
 
-    public List<Children> getChildrenByParentId (Long id) {
+    public List<Children> getChildrenByParentId (Integer id) {
         try {
             return this.childrenRepository.findAllByparentId(id);
         } catch (Exception e) {
