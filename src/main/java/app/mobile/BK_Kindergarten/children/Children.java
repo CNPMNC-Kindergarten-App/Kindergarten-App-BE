@@ -1,9 +1,13 @@
 package app.mobile.BK_Kindergarten.children;
 
-import jakarta.persistence.*;
+import app.mobile.BK_Kindergarten.parent.Parent; // Import Parent entity
+import jakarta.persistence.*; // Import JPA annotations
 import lombok.Data;
+import lombok.EqualsAndHashCode; // Import Lombok annotations
+import lombok.ToString;
 
-import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
 
 @Entity
 @Table(name =  "Children")
@@ -13,7 +17,7 @@ public class Children {
     @Id
     @Column(name = "child_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     private  String name;
@@ -22,16 +26,33 @@ public class Children {
     private  String sex;
 
     @Column(name = "dob")
-    private Date dob;
+    private LocalDate dob;
+
+    @Column(name = "bedtime")
+    private Time bedtime;
 
     @Column(name = "habit")
     private String habit;
 
-    @Column(name = "character")
+    @Column(name = "`character`")
     private String character;
 
-//    @OneToOne()
-//    @JoinColumn(name = "parent_id")
-//    private Parent parentId;
 
+
+    @Column(name = "allergy")
+    private String allergy;
+
+    @Column(name = "medical_issue")
+    private String medical_issue;
+
+    @Column(name = "medical_history")
+    private String medical_history;
+
+    @Column(name = "health_status")
+    private String health_status;
+
+
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
+    private Parent parent;
 }

@@ -1,0 +1,33 @@
+app = "bk-kindergarten"  # Change to your preferred app name
+primary_region = "sin"   # Singapore, choose region near your users
+
+[build]
+dockerfile = "Dockerfile"
+
+#[env]
+## Fly.io automatically provides PORT environment variable
+#SPRING_PROFILES_ACTIVE = "production"
+#SPRING_DATASOURCE_URL = "jdbc:mysql://mysql-3e8ba3d9-cnpmnc-3065.k.aivencloud.com:14132/devdb?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=UTC"
+#SPRING_JPA_HIBERNATE_DDL_AUTO = "validate"
+#SPRING_SQL_INIT_MODE = "never"
+
+# HTTP service configuration
+[http_service]
+internal_port = 8080
+force_https = true
+processes = ["app"]
+
+[[http_service.checks]]
+interval = "30s"  # Longer interval for startup
+timeout = "30s"   # Longer timeout
+grace_period = "120s"  # Give Spring Boot time to start
+method = "GET"
+path = "/api/health"
+
+# Optional: Set memory limits
+[processes]
+app = "java -Xmx512m -jar app.jar"
+
+[vm]
+memory = "1gb"
+cpus = 1

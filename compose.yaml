@@ -7,7 +7,6 @@ services:
     env_file:
       - .env
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-3e8ba3d9-cnpmnc-3065.k.aivencloud.com:14132/devdb?useSSL=true&allowPublicKeyRetrieval=true
       - SPRING_JPA_HIBERNATE_DDL_AUTO=validate
       - SPRING_SQL_INIT_MODE=never
     networks:
