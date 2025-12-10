@@ -49,7 +49,7 @@ public class ChildrenController {
     }
 
     @GetMapping()
-    public List<Children> getChildrenByParentId(@RequestParam(name = "parent_id") Long id) {
+    public List<Children> getChildrenByParentId(@RequestParam(name = "parent_id") Integer id) {
         return this.childrenService.getChildrenByParentId(id);
     }
 }

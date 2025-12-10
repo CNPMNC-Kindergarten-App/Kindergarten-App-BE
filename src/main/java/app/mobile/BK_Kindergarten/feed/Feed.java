@@ -19,7 +19,6 @@ public class Feed {
     @Column(name = "title")
     private String title;
 
-    @Type(JsonType.class)
     @Column(name = "image_url")
     private String image;
 
