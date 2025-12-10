@@ -1,6 +1,8 @@
 package app.mobile.BK_Kindergarten.menu;
 
+import app.mobile.BK_Kindergarten.dish.Dish;
 import app.mobile.BK_Kindergarten.menu.dto.AddDishToMenuRequest;
+import app.mobile.BK_Kindergarten.menu.dto.AddNewDishRequest;
 import app.mobile.BK_Kindergarten.menu.dto.CreateMenuRequest;
 import app.mobile.BK_Kindergarten.menu.dto.MenuGroupResponse;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +34,12 @@ public class MenuController {
     @GetMapping("/{id}")
     public Menu getMenuDetail(@PathVariable int id) {
         return menuService.getMenu(id);
+    }
+
+    @PostMapping("/add_dish")
+    public Dish addNewDish(
+            @RequestBody AddNewDishRequest request) {
+        return menuService.addNewDish(request);
     }
 
     @PostMapping("/{id}/dishes")
