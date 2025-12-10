@@ -1,0 +1,12 @@
+package app.mobile.BK_Kindergarten.attend.dto;
+
+import lombok.Data;
+import java.time.LocalDate;
+
+@Data
+public class CreateAttendRequest {
+    private Long childId;  // ID học sinh được điểm danh
+    private Integer classId;  // ID lớp học
+    private LocalDate date;   // Ngày điểm danh (nếu không gửi sẽ lấy ngày hiện tại)
+    private String status;    // Trạng thái điểm danh (ví dụ: "Có mặt", "Vắng mặt")
+}
