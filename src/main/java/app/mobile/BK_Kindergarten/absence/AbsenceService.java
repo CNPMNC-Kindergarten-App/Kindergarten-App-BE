@@ -54,6 +54,14 @@ public class AbsenceService {
         }
     }
 
+    public AbsenceDto getAbsenceByChildId(Long childId) {
+        try {
+            return absenceRepository.findAbsenceByChildId(childId);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @Transactional
     public Absence acceptAbsence(Long absenceId) {
         try {

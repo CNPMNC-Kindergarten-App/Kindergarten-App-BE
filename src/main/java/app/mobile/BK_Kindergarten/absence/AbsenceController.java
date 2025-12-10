@@ -30,6 +30,11 @@ public class AbsenceController {
         return  this.absenceService.getAbsencesByStatus(absenceStatus);
     }
 
+    @GetMapping("/get")
+    public AbsenceDto getAllAbsences(@RequestParam(name = "child_id") Long childId) {
+        return  this.absenceService.getAbsenceByChildId(childId);
+    }
+
     @PutMapping("/accept/{id}")
     public Absence acceptAbsence(@PathVariable("id") Long absence_id) {
 

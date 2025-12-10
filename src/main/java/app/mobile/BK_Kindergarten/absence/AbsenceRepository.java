@@ -25,4 +25,17 @@ public interface AbsenceRepository extends JpaRepository<Absence, Long> {
             "FROM Absence a JOIN a.children c WHERE a.status = :status")
     List<AbsenceDto> findAbsenceByStatus(@Param("status") Absence.statusAbsence status);
 
+    @Query("""
+        SELECT new app.mobile.BK_Kindergarten.absence.dto.AbsenceDto(
+            a.absence_id,
+            a.reason,
+            c.name,
+            a.status
+        )
+        FROM Absence a
+        JOIN a.children c
+        WHERE c.childId = :childId
+    """)
+    AbsenceDto findAbsenceByChildId(@Param("childId") Long childId);
+
 }
