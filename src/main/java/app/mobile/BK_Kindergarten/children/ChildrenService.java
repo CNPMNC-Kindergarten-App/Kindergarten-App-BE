@@ -58,6 +58,17 @@ public class ChildrenService {
         }
     }
 
+    public Children getChildrenBasicById(Long id) {
+        try {
+            // Lấy đối tượng Children từ database
+            Children child = this.childrenRepository.findChildrenById(id);
+
+            return child; // Trả về đối tượng đã chỉnh sửa
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public Children getChildrenById(Long id) {
         try {
             // Lấy đối tượng Children từ database

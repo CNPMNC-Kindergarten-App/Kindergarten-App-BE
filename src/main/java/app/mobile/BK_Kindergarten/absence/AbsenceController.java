@@ -31,7 +31,7 @@ public class AbsenceController {
     }
 
     @GetMapping("/get")
-    public AbsenceDto getAllAbsences(@RequestParam(name = "child_id") Long childId) {
+    public List<AbsenceDto> getAllAbsences(@RequestParam(name = "child_id") Long childId) {
         return  this.absenceService.getAbsenceByChildId(childId);
     }
 

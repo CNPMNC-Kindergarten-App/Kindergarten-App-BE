@@ -22,7 +22,7 @@ public class AbsenceService {
     public Absence createAbsence(createAbsenceDto createDto) {
         try {
 
-            Children childrenEntity = this.childrenService.getChildrenById(createDto.getChild_id());
+            Children childrenEntity = this.childrenService.getChildrenBasicById(createDto.getChild_id());
 
             Absence absenceEntity = new Absence();
             absenceEntity.setStatus(Absence.statusAbsence.WAITING);
@@ -54,7 +54,7 @@ public class AbsenceService {
         }
     }
 
-    public AbsenceDto getAbsenceByChildId(Long childId) {
+    public List<AbsenceDto> getAbsenceByChildId(Long childId) {
         try {
             return absenceRepository.findAbsenceByChildId(childId);
         } catch (Exception e) {

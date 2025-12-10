@@ -16,8 +16,8 @@ import java.util.Optional;
 public interface ChildrenRepository extends JpaRepository<Children, Long> {
     List<Children> findAllByName(String name);
 
-    // @Query("SELECT c FROM Children c WHERE c.parent_id = :parent_id")
-    // List<Children> findAllByparentId(Integer parent_id);
+     @Query("SELECT c FROM Children c WHERE c.id = :childId")
+     Children findChildrenById(@Param("childId") Long child_id);
 
     List<Children> findAllByParent_Id(Integer parentId);
 
